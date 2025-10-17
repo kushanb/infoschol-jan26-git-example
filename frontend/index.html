@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Quick Quiz — InfoSchol</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/theme.css" id="theme-link" />
+</head>
+
+<body>
+    <main class="container">
+        <header class="header">
+            <h1>Quick Quiz</h1>
+            <div class="controls">
+                <button id="theme-toggle" class="btn">Toggle Theme</button>
+                <button id="dark-mode-btn" class="btn secondary">Dark Mode</button>
+                <button id="restart-btn" class="btn secondary">Restart</button>
+            </div>
+        </header>
+
+        <section id="quiz" class="card">
+            <div id="question-area">
+                <h2 id="question">Question text will go here</h2>
+                <ul id="options" class="options"></ul>
+            </div>
+
+            <div class="meta">
+                <div>Question <span id="current">0</span>/<span id="total">0</span></div>
+                <div>Score: <span id="score">0</span></div>
+            </div>
+
+            <div class="actions">
+                <button id="next-btn" class="btn primary">Next</button>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Built for a demo — stylish, responsive, and accessible.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

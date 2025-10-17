@@ -1,0 +1,50 @@
+/* Main layout and component styles */
+:root{
+  --bg: #3d4a7e;
+  --card: #a56161;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #0f1186; /* purple */
+  --accent-2: #06b6d4; /* teal */
+  --success: #10b981;
+  --danger: #fc1d1d;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;font-family:Circular, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-sereif;
+  background:linear-gradient(180deg,var(--bg),#eef2ff);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:900px;margin:3rem auto;padding:1rem}
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.header h1{margin:0;font-size:1.6rem;color:var(--accent)}
+.controls{display:flex;gap:0.5rem}
+
+.card{background:var(--card);border-radius:12px;padding:1.25rem;box-shadow:0 8px 24px rgba(31,41,55,0.08)}
+
+#question-area{min-height:140px}
+#question{margin:0 0 1rem 0;font-size:1.25rem}
+.options{list-style:none;padding:0;margin:0;display:grid;gap:0.6rem}
+.options li{border-radius:8px;padding:0.75rem 0.9rem;border:1px solid rgba(15,23,42,0.06);cursor:pointer;transition:all 160ms ease}
+.options li:hover{transform:translateY(-2px)}
+.options li.selected{background:linear-gradient(90deg,var(--accent) 0%, #7f43ef 100%);color:white;border-color:transparent}
+.options li.correct{background:linear-gradient(90deg,var(--success),#34d399);color:white;border-color:transparent}
+.options li.wrong{background:linear-gradient(90deg,var(--danger),#fb7185);color:white;border-color:transparent;opacity:0.95}
+
+.meta{display:flex;justify-content:space-between;margin-top:1rem;color:var(--muted)}
+.actions{display:flex;justify-content:flex-end;margin-top:1rem}
+.btn{border:0;padding:0.5rem 0.9rem;border-radius:8px;background:transparent;cursor:pointer;font-weight:600}
+.btn.primary{background:var(--accent);color:white}
+.btn.secondary{background:transparent;border:1px solid rgba(31,41,55,0.08)}
+
+.footer{margin-top:1.25rem;text-align:center;color:var(--muted);font-size:0.9rem}
+
+/* Responsive */
+@media (max-width:600px){
+  .container{margin:1.5rem 1rem}
+  .header h1{font-size:1.2rem}
+}
