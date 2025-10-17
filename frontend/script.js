@@ -21,6 +21,7 @@ const scoreEl = document.getElementById('score');
 const nextBtn = document.getElementById('next-btn');
 const restartBtn = document.getElementById('restart-btn');
 const themeToggle = document.getElementById('theme-toggle');
+const darkModeBtn = document.getElementById('dark-mode-btn');
 
 function render() {
   const item = quizData[current];
@@ -85,6 +86,7 @@ nextBtn.addEventListener('click', () => {
 
 restartBtn.addEventListener('click', () => {
   current = 0; score = 0; selected = null; render();
+  nextBtn.disabled = false;
 });
 
 function finish() {
@@ -101,6 +103,13 @@ function loadTheme(){
   themeToggle.textContent = `Theme: ${t}`;
 }
 
+function setTheme(name){
+  if (name === 'light') document.documentElement.removeAttribute('data-theme');
+  else document.documentElement.setAttribute('data-theme', name);
+  localStorage.setItem('site-theme', name);
+  themeToggle.textContent = `Theme: ${name}`;
+}
+
 themeToggle.addEventListener('click', ()=>{
   const cur = document.documentElement.getAttribute('data-theme') || 'light';
   const order = ['light','dark','sepia'];
@@ -110,6 +119,13 @@ themeToggle.addEventListener('click', ()=>{
   localStorage.setItem('site-theme', next);
   themeToggle.textContent = `Theme: ${next}`;
 });
+
+// Dedicated dark mode button: immediately switch to dark theme
+if (darkModeBtn) {
+  darkModeBtn.addEventListener('click', ()=>{
+    setTheme('dark');
+  });
+}
 
 // init
 loadTheme();
