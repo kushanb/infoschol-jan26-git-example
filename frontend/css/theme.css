@@ -1,20 +1,20 @@
 /* Theme overrides. This file manages light/dark themes. The page toggles a data-theme attribute on <html> to switch. */
 html[data-theme='dark']{
-  --bg: #0f1724;
-  --card: #0b1220;
-  --text: #e6eef8;
+  --bg: #243653;
+  --card: #102755;
+  --text: #ffffff;
   --muted: #94a3b8;
-  --accent: #7c3aed;
+  --accent: #4c268d;
   --accent-2: #06b6d4;
-  --success: #10b981;
-  --danger: #f97316;
+  --success: #2dbb8c;
+  --danger: #c42424;
 }
 
 html[data-theme='sepia']{
   --bg: #faf0e6;
   --card: #fffaf6;
-  --text: #3b2f2f;
-  --muted: #6b584e;
+  --text: #725050;
+  --muted: #63564e;
   --accent: #b4690e;
   --accent-2: #6b21a8;
 }
